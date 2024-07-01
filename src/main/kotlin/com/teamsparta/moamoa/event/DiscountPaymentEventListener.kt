@@ -1,7 +1,6 @@
 package com.teamsparta.moamoa.event
 
 import com.teamsparta.moamoa.domain.groupPurchase.service.GroupPurchaseService
-import com.teamsparta.moamoa.domain.groupPurchase.service.GroupPurchaseServiceImpl
 import org.springframework.context.event.EventListener
 import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Component
