@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = ["*"], allowedHeaders = ["*"])
 class ProductController(
     private val productService: ProductService,
 ) {

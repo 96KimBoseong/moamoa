@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*
 
 @Validated
 @RestController
-@CrossOrigin(origins = ["*"], allowedHeaders = ["*"])
 class ReviewController(
     private val reviewService: ReviewService,
 ) {
