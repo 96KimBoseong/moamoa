@@ -93,7 +93,7 @@ class GroupPurchaseServiceImpl(
     }
 
     @Transactional
-    fun leaveGroupPurchase(
+    override fun leaveGroupPurchase(
         userId: Long,
         groupPurchaseId: Long,
     ) {
