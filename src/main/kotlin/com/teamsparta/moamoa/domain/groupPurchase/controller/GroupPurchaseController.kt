@@ -1,13 +1,13 @@
 package com.teamsparta.moamoa.domain.groupPurchase.controller
 
-import com.teamsparta.moamoa.domain.groupPurchase.service.GroupPurchaseService
+import com.teamsparta.moamoa.domain.groupPurchase.service.GroupPurchaseServiceImpl
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/groupPurchases")
-class GroupPurchaseController(private val groupPurchaseService: GroupPurchaseService) {
+class GroupPurchaseController(private val groupPurchaseServiceImpl: GroupPurchaseServiceImpl) {
 //    @PostMapping("/createAndJoin")
 //    fun createAndJoinOrJoin(
 //        @RequestBody request: CreateGroupPurchaseRequest,
@@ -24,7 +24,7 @@ class GroupPurchaseController(private val groupPurchaseService: GroupPurchaseSer
         @RequestParam groupPurchaseId: Long,
         @RequestParam orderId: Long,
     ): ResponseEntity<Unit> {
-        val groupPurchaseJoinUserResponse = groupPurchaseService.joinGroupPurchase(userId, groupPurchaseId, orderId)
+        val groupPurchaseJoinUserResponse = groupPurchaseServiceImpl.joinGroupPurchase(userId, groupPurchaseId, orderId)
         return ResponseEntity.status(HttpStatus.OK).body(groupPurchaseJoinUserResponse)
     }
 
@@ -33,7 +33,7 @@ class GroupPurchaseController(private val groupPurchaseService: GroupPurchaseSer
         @RequestParam userId: Long,
         @RequestParam groupPurchaseId: Long,
     ): ResponseEntity<Unit> {
-        groupPurchaseService.leaveGroupPurchase(userId, groupPurchaseId)
+        groupPurchaseServiceImpl.leaveGroupPurchase(userId, groupPurchaseId)
         return ResponseEntity.status(HttpStatus.OK).build()
     }
 }
