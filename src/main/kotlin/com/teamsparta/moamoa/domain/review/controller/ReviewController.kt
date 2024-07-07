@@ -84,7 +84,7 @@ class ReviewController(
         return ResponseEntity.ok(reviews)
     }
 
-    @GetMapping("/review/get/{orderId}")
+    @GetMapping("/reviews/get/{orderId}")
     fun getReviewByOrderId(@PathVariable orderId: Long): ResponseEntity<ReviewResponse> {
         val review = reviewService.getReviewByOrderId(orderId)
         return ResponseEntity.ok(review)
